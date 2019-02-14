@@ -6,13 +6,13 @@
 % equations on paper can be annoying, so a numerical solution is
 % appropriate here. This approach would be significantly harder in a
 % different coordinate system, but for rectangular coordinates, its OK.
-
 % There is an inherent error involved with both methods. The analytical
 % solution involves an infinite sum, but since that's not physically
 % realizable, I cut it off at 100. On my plot of the analytical solution,
-% the top edges are still wavy, as its comprised of a large quantity of
-% sinusoids. My finite difference solution looks exactly the way I want it
-% to, but i
+% the top edges are still rounded at the corners, and they aren't at
+% perfectly 90 degrees. 
+% The finite difference solution I obtained looks really good, but with
+% a wider mesh it would look much less smooth. 
 
 nx = 150;
 ny = 100;
@@ -76,7 +76,6 @@ for N = 1:100
         figure(3)
         surf(y,x,V_an)
         title('Surface plot of potential (analytical solution)')
-        hold on
         pause(0.01)
     end
 end
